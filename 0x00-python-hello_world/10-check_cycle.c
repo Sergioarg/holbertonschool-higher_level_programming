@@ -15,7 +15,7 @@ int check_cycle(listint_t *list)
 	if (list == NULL)
 		return (0);
 	/* Iterate the linked list */
-	while (hare != NULL && hare->next != NULL)
+	while (hare != NULL && turtle != NULL && hare->next != NULL)
 	{
 		hare = hare->next->next; /* Jump every two lists */
 		turtle = turtle->next; /* Jump evry one list  */
