@@ -9,8 +9,8 @@ int check_cycle(listint_t *list)
 {
 	/* Create two runners */
 	/* Assigned each runner your respective speed */
-	listint_t *turtle = list;
-	listint_t *hare = list;
+	const listint_t *turtle = list;
+	const listint_t *hare = list;
 	/* Validate if is the linked list is null and return null */
 	if (list == NULL)
 		return (0);
