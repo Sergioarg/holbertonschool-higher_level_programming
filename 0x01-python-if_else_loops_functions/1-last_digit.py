@@ -14,7 +14,7 @@ if (number > 0):
         print(msg, number, "is", p_last, "and is less than 6 and not 0")
 # NEGATIVE NUMBERS
 if (number < 0):
-    if (p_last == 0):
+    if (n_last == 0):
         print(msg, number, "is", p_last, "and is 0")
     elif (n_last > 5):
         print(msg, number, "is", n_last, "and is greater than 5")
