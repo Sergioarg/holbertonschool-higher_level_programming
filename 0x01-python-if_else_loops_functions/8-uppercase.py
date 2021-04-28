@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-def uppercase(string):
+def uppercase(str):
 
     to_upper = ''
-    for upper in string:
+    for upper in str:
         if (ord(upper) >= 97 and ord(upper) <= 122):
             to_upper += chr(ord(upper) - 32)
         else:
