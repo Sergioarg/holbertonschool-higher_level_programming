@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+import sys
+count = len(sys.argv)
+if (count == 1):
+    print("0 arguments.")
+elif (count == 2):
+    print("1 argument:")
+else:
+    print('{:d} arguments:'.format((count - 1)))
+for arguments in range(1, count):
+    if (count > 1):
+        print('{:d}: {:s}'.format(arguments, sys.argv[arguments]))
