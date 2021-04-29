@@ -7,4 +7,4 @@ if __name__ == "__main__":
         print("0")
     for number in range(1, count):
         add += int(sys.argv[number])
-    print('Add: {:d}'.format(add))
+    print('{:d}'.format(add))
