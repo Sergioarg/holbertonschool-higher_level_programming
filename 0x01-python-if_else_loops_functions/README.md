@@ -1,4 +1,4 @@
-# 💻- 0x00-python-hello_word
+# 💻- 0x01-python-if_else_loop
 
 _In this folder you can find different folders where you can see the process in which I am learning Python_
 
