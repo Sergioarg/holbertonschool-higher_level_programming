@@ -14,12 +14,12 @@ if __name__ == "__main__":
     if (count == 1):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-
+    # Take the arguments to make the opceracion
     argv = (sys.argv)
     if (operator.get(argv[2]) == (None)):
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
     else:
         r = operator.get(str(argv[2]))(int(argv[1]), int(argv[3]))
-        print(argv[1], argv[2], argv[3], "=", r)
+        print('{:s} {:s} {:s} = {:d}'.format(argv[1], argv[2], argv[3], r))
         exit(0)
