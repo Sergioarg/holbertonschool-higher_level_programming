@@ -1,0 +1,10 @@
+#!/bin/bash
+echo  "Empty: $(./100-my_calculator.py)"
+echo  "Div: $(./100-my_calculator.py 3 / 5 )"
+echo  "Add: $(./100-my_calculator.py  1 + 3)"
+echo  "Sub: $(./100-my_calculator.py 1 - 3)"
+echo  "Mul: $(././100-my_calculator.py 2 * 3)"
+echo  "Mul: $(././100-my_calculator.py 2 '*' 3)"
+echo  "Incorrect ope (H): $(./100-my_calculator.py 3 H 5)"
+echo  "Number whit operartor: $(./100-my_calculator.py 1 +)"
+echo  "Only one number 2: $(./100-my_calculator.py 2)"
