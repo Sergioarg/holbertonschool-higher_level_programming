@@ -8,4 +8,4 @@ class Square:
     """Class Square created. """
     def __init__(self, size=0):
         """Initializes the data."""
-        __size = size
+        self.__size = size
