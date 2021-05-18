@@ -5,7 +5,7 @@
 
 class Square:
 
-    """Valida que el size sea correcto."""
+    """Valid that the size is correct."""
 
     def __init__(self, size=0):
         if(type(size) != int):
