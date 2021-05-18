@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+
+"""Represents a Square class."""
+
+
 class Square:
+
+    """Class Square created. """
     def __init__(self, size=0):
-        pass
+        """Initializes the data."""
+        __size = size
