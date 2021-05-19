@@ -53,9 +53,11 @@ class Square:
         position = self.position
         size = self.size
 
-        if (size <= 0 or position[1] > 0):
+        if (size <= 0):
             print("")
         else:
+            for col in range(position[1]):
+                print()
             for i in range(size):
                 for col in range(position[0]):
                     print(" ", end="")
