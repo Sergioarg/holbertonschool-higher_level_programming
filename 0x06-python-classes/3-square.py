@@ -3,9 +3,6 @@
 """ Create the Square class """
 
 
-from typing import Sized
-
-
 class Square:
 
     """ Valid that the size is number."""
