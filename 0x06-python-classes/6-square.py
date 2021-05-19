@@ -36,9 +36,9 @@ class Square:
 
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError(msg)
-        elif not(isinstance(int, value[0]) or isinstance(int, value[1])):
+        elif not(isinstance(value[0], int) or isinstance(value[1], int)):
             raise TypeError(msg)
-        elif (value[1] < 0 and value[2] < 0):
+        elif (value[0] < 0 or value[1] < 0):
             raise TypeError(msg)
         self.position = value
 
@@ -47,15 +47,13 @@ class Square:
         number = self.size
         return(number * number)
 
-    """ Function to print square  """
+    """ Function to print square """
     def my_print(self):
 
         position = self.position
         size = self.size
 
-        if (size <= 0):
-            print("")
-        elif (position[1] > 0):
+        if (size <= 0 or position[1] > 0):
             print("")
         else:
             for i in range(size):
