@@ -1,37 +1,41 @@
 #!/usr/bin/python3
 
-""" Create the Square class """
+""" Module square """
 
 
 class Square:
+    """ Class square """
 
-    """ Init stances """
+    __size = 0
+    __position = (0, 0)
+
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        """ def stances """
+        self.size = size
+        self.position = position
 
-    """ Property to size """
     @property
     def size(self):
+        """ Property to size """
         return (self.__size)
 
-    """ Property to position """
     @property
     def position(self):
+        """ Property to position """
         return (self.__position)
 
-    """ setter the size """
     @size.setter
     def size(self, value):
+        """ setter the size """
         if (type(value) != int):
             raise TypeError("size must be an integer")
         elif (value < 0):
             raise ValueError("size must be >= 0")
-        self.__size = int(value)
+        self.__size = value
 
-    """ setter of position """
     @position.setter
     def position(self, value):
+        """ setter of position """
         msg = "position must be a tuple of 2 positive integers"
 
         if not isinstance(value, tuple) or len(value) != 2:
@@ -40,16 +44,15 @@ class Square:
             raise TypeError(msg)
         elif (value[0] < 0 or value[1] < 0):
             raise TypeError(msg)
-        self.position = value
+        self.__position = value
 
-    """ Public instance method """
     def area(self):
+        """ Public instance method """
         number = self.size
         return(number * number)
 
-    """ Function to print square """
     def my_print(self):
-
+        """ Function to print square """
         position = self.position
         size = self.size
 
