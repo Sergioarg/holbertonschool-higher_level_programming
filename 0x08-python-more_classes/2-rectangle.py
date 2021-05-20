@@ -19,9 +19,8 @@ class Rectangle:
         if (type(value) != int):
             raise TypeError("width must be an integer")
         elif (value < 0):
+            value = 0
             raise ValueError("width must be >= 0")
-        elif (self.__width <= 0):
-            self.__width = 0
         self.__width = value
 
     """ Property height """
@@ -35,9 +34,8 @@ class Rectangle:
         if (type(value) != int):
             raise TypeError("height must be an integer")
         elif (value < 0):
+            value = 0
             raise ValueError("height must be >= 0")
-        elif (self.__height <= 0):
-            self.__height = 0
         self.__height = value
 
     """ Function return the area of rectagle """
