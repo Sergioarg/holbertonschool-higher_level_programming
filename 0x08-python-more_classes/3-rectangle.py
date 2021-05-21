@@ -63,7 +63,7 @@ class Rectangle:
         empty_char = ''
 
         if width == 0 or height == 0:
-            return ''
+            return (empty_char)
 
         for h in range(height):
             for w in range(width):
