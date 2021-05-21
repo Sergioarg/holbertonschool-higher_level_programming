@@ -45,8 +45,8 @@ class Rectangle:
     def area(self):
         width = self.__width
         height = self.__height
-        if width == 0 or height == 0:
-            return 0
+        if (width == 0 or height == 0):
+            return (0)
         return (width * height)
 
     """ Function return the perimeter of rectagle """
@@ -71,6 +71,7 @@ class Rectangle:
         for h in range(height):
             for w in range(width):
                 empty_char = empty_char + str(self.print_symbol)
+
             if h != height - 1:
                 empty_char = empty_char + '\n'
         return empty_char
