@@ -41,7 +41,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-1]), -1)
         self.assertEqual(max_integer([1]), 1)
         self.assertEqual(max_integer([1.0]), 1.0)
-        self.assertEqual(max_integer([-2.0]), 2.0)
+        self.assertEqual(max_integer([-2.0]), -2.0)
         self.assertEqual(max_integer("P"), 'P')
 
     """ Function to get  raise message errors """
