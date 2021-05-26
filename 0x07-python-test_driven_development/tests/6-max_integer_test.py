@@ -35,9 +35,19 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer("Python"), 'y')
 
+    """ Function to make test whit alone values """
+
+    def test_mixed(self):
+        self.assertEqual(max_integer([-1]), -1)
+        self.assertEqual(max_integer([1]), 1)
+        self.assertEqual(max_integer([1.0]), 1.0)
+        self.assertEqual(max_integer([2.0]), 2.0)
+        self.assertEqual(max_integer("P"), 'P')
+
     """ Function to get  raise message errors """
 
     def test_raise_messages(self):
         self.assertRaises(TypeError, max_integer, [98, '98'])
         self.assertRaises(TypeError, max_integer, ['98', 25, -3, 2.6])
+        self.assertRaises(KeyError, max_integer, {'a': 98, 'b': 89})
         self.assertRaises(TypeError, max_integer, None)
