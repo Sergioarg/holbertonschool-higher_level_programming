@@ -1,17 +1,43 @@
->>> say_my_name = __import__('3-say_my_name').say_my_name
->>> say_my_name(1, "White")
-first_name must be a string
+================================
+The ``3-say_my_name.txt`` module
+================================
 
->>> say_my_name("Walter", -2)
-last_name must be a string
+Using function ``say_my_name()`` of file ``3-say_my_name.py``.
 
->>> say_my_name(['A', 'b', 'C'], "Pinkman")
-Traceback (most recent call last):
-TypeError: first_name must be a string
+Testing
+=======
 
+``say_my_name()`` print a message ``My name is <first name> <last name>``.
 
->>> say_my_name("Jesse", ('A', 98, 'C'))
-last_name must be a string
+::
+    # Importation
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name(1, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
 
->>> say_my_name(2.0, ('A', 98, 'C'))
-first_name must be a string
+    >>> say_my_name("Walter", -2)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Walter", -2)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(['A', 'b', 'C'], "Pinkman")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Jesse", ('A', 98, 'C'))
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(2.0, ('A', 98, 'C'))
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
