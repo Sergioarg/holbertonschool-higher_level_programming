@@ -1,0 +1,54 @@
+================================
+The ``2-.txt`` module
+================================
+
+Using function ``matrix_divided()`` of file ``2-matrix_divided.py``.
+
+──────────────────────────
+It is necessary have 5 test.
+There are: 9
+──────────────────────────
+
+Numbers
+=======
+
+``matrix_divided()`` returns the product of its arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
+
+::
+
+	>>> matrix_divided = __import__('0-matrix_divided').matrix_divided
+
+	>>> matrix_divided(1, 2)
+	3
+
+	>>> matrix_divided(100, -2)
+	98
+
+	>>> matrix_divided(-98, 98)
+	0
+
+	>>> matrix_divided(100.3, -2)
+	98
+
+	>>> matrix_divided(2)
+	100
+
+
+Non-numbers
+===========
+
+Because ``+`` is also defined on data types other than numbers,
+``matrix_divided()`` work just as well if one of the arguments is a
+string, a list, or a tuple.
+
+::
+
+	>>> matrix_divided('a', 3)
+	'a must be an integer'
+
+	>>> matrix_divided(3, 'b')
+	'b must be an integer'
+
+	>>> matrix_divided(['A', 'B', 'C'], 2)
+	'a must be an integer'
