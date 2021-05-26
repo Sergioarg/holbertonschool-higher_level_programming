@@ -32,6 +32,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_mixed(self):
         self.assertEqual(max_integer([-1, 2.0, 40, -69]), 40)
+        self.assertEqual(max_integer([-1, 2.0, 50.0, -69.0]), 50.0)
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer("Python"), 'y')
 
