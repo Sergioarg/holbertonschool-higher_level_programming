@@ -18,8 +18,6 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_float(self):
         self.assertEqual(max_integer([1.0, 2.0, 3.0, 4.0]), 4.0)
-        self.assertEqual(max_integer([10.0, 2.0, 60.0, 4.0]), 60.0)
-        self.assertEqual(max_integer([2.0, 3.0, 5.0, 1.0]), 5.0)
 
     """ Function to make test negatives values """
 
@@ -38,7 +36,7 @@ class TestMaxInteger(unittest.TestCase):
 
     """ Function to make test whit alone values """
 
-    def test_mixed(self):
+    def test_alone(self):
         self.assertEqual(max_integer([-1]), -1)
         self.assertEqual(max_integer([1]), 1)
         self.assertEqual(max_integer([1.0]), 1.0)
