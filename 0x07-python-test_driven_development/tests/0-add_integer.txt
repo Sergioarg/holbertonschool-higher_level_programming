@@ -31,8 +31,8 @@ For numbers, that value is equivalent to using the ``+`` operator.
     >>> add_integer(2)
     100
 
-    >>> add_integer(3, )
-    101
+    >>> add_integer(3.5, 3.5)
+    7
 
 Non-numbers
 ===========
@@ -43,15 +43,15 @@ string, a list, or a tuple.
 
 ::
 
-    >>> add_integer('a', 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer
-
-    >>> add_integer(3, 'b')
+    >>> add_integer('Py', 3)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
+
+    >>> add_integer(3, 'thon')
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
 
     >>> add_integer()
     Traceback (most recent call last):
