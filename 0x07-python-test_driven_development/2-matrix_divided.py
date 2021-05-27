@@ -10,6 +10,8 @@ def matrix_divided(matrix, div):
             "matrix must be a matrix (list of lists) of integers/floats")
     elif (div == 0):
         raise ZeroDivisionError("division by zero")
+    elif (type(div) != int or type != float):
+        raise TypeError("div must be a number")
 
     for number in matrix:
         new_matrix.append(number / div)
