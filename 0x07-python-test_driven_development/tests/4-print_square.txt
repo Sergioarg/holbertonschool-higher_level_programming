@@ -3,24 +3,34 @@ The ``4-print_square`` module
 ================================
 
 Using function ``print_square()`` of file ``4-print_square.py``.
-#--------------------------------#
 
 Imports module
-#--------------------------------#
+──────────────
     >>> print_square = __import__('4-print_square').print_square
 
 
-Non-integer
+Test cases
 ===========
 
 ::
 
-    >>> print_square(['a', 'B', None])
-    Traceback (most recent call last):
-    ...
-    TypeError: size must be an integer
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
 
-    >>> print_square('Salut')
+    >>> print_square(8)
+    ########
+    ########
+    ########
+    ########
+    ########
+    ########
+    ########
+    ########
+
+    >>> print_square(['a', 'B', None])
     Traceback (most recent call last):
     ...
     TypeError: size must be an integer
