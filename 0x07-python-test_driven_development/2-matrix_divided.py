@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Module to divide numbers of souble matrix"""
 
 
 def matrix_divided(matrix, div):
+    """Function to divide the numbers of matrix"""
     t_matrix = type(matrix)
     new_matrix = []
 
