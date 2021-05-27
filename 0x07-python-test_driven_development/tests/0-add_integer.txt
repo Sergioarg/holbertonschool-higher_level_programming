@@ -3,10 +3,10 @@ The ``0-add_integer`` module
 ================================
 
 Using function ``add_integer()`` of file ``0-add_integer.py``.
-#--------------------------------#
+
 
 Imports module
-#--------------------------------#
+───────────────────────────
     >>> add_integer = __import__('0-add_integer').add_integer
 
 Numbers
@@ -31,6 +31,8 @@ For numbers, that value is equivalent to using the ``+`` operator.
     >>> add_integer(2)
     100
 
+    >>> add_integer(3, )
+    101
 
 Non-numbers
 ===========
@@ -43,9 +45,15 @@ string, a list, or a tuple.
 
     >>> add_integer('a', 3)
     Traceback (most recent call last):
-    TypeError: b must be an integer
-
+    ...
+    TypeError: a must be an integer
 
     >>> add_integer(3, 'b')
     Traceback (most recent call last):
-    TypeError: a must be an integer
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
