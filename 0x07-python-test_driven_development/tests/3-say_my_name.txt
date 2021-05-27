@@ -17,7 +17,7 @@ Importation
 Good Cases
 
     >>> say_my_name("Heisenberg")
-    My name is Heisenberg
+    My name is Heisenberg 
 
     >>> say_my_name("Walter", "White")
     My name is Walter White
