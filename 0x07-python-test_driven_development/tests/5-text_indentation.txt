@@ -37,3 +37,12 @@ Non-string
     Traceback (most recent call last):
     ...
     TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+    >>> text_indentation('Test.python:is ? cool ?')
+    Test.
+    <BLANKLINE>
+    python:
+    <BLANKLINE>
+    is ?
+    <BLANKLINE>
+    cool ?
