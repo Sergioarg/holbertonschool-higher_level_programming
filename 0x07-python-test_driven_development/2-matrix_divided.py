@@ -27,8 +27,8 @@ def matrix_divided(matrix, div):
         for values in n_rows:
             if not (type(values) == int or type(values) == float):
                 raise_msg = " "
-                raise TypeError("matrix must be a matrix \
-                (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix" +
+                                "(list of lists) of integers/floats")
             new_values.append(round(values/div, 2))
         new_matrix.append(new_values)
 
