@@ -13,6 +13,6 @@ if __name__ == "__main__":
     except:
         object = []
 
-    for add in argv[1:]:
-        object.append(add)
+    for add_list in argv[1:]:
+        object.append(add_list)
     save_to_json_file(object, filename)
