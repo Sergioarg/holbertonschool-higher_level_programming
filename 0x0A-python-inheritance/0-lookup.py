@@ -8,4 +8,4 @@ def lookup(obj):
     Args:
         obj (list): object listg
     """
-    return list(obj.__dict__)
+    return dir(obj)
