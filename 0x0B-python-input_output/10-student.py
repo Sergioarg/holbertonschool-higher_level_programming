@@ -17,13 +17,20 @@ class Student:
         self.age = age
 
     # """ Returns the dictionary description """
-    # def to_json(self):
-    #     return self.__dict__
-
-    # def to_json(self, attrs=None):
-    #     if (type(attrs) == list):
-    #         return attrs.__dict__
 
     def to_json(self, attrs=None):
-        if (type(attrs) == list):
-            return attrs.__dict__
+        # If the list comes empty, the dictionary returns all attributes
+
+        if (attrs is None):
+            return self.__dict__
+
+        all_attrs = {}
+        # Each attribute
+        # attrs: firts_name, last_name, age
+        for element in attrs:
+            # First refers to the Self object
+            # hasattr -> Valid if the element is in the object
+            if hasattr(self, element):
+                # getattr -> Take the value of the Tour attribute
+                all_attrs[element] = getattr(self, element)
+        return all_attrs
