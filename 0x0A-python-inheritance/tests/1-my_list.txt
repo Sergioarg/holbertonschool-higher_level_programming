@@ -1,0 +1,54 @@
+================================
+The ``1-my_list.py`` module
+================================
+
+Test where the function of the super class list is used on my list
+
+
+Imports module
+───────────────────────────
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
+
+Testng cases
+=======
+
+::
+
+Correct cases
+
+    >>> my_list = MyList()
+    >>> my_list.append(6)
+    >>> my_list.append(5)
+    >>> my_list.append(7)
+    >>> print(my_list)
+    [6, 5, 7]
+    >>> my_list.print_sorted()
+    [5, 6, 7]
+    >>> print(my_list)
+    [6, 5, 7]
+
+Test Cases
+
+    >>> empty_list = MyList()
+    >>> print(empty_list)
+    []
+    >>> empty_list.print_sorted()
+    []
+
+    >>> type_list = MyList()
+    >>> isinstance(type_list, list)
+    True
+
+Negative numbers
+
+    >>> negative_numbers = MyList()
+    >>> negative_numbers.append(-8)
+    >>> negative_numbers.append(-2)
+    >>> negative_numbers.append(-4)
+    >>> print(negative_numbers)
+    [-8, -2, -4]
+    >>> negative_numbers.print_sorted()
+    [-8, -4, -2]
+    >>> print(negative_numbers)
+    [-8, -2, -4]
