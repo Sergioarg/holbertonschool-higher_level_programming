@@ -2,11 +2,9 @@
 """ Module of class BaseGeometry """
 
 
-from typing import Type
-
-
 class BaseGeometry:
     """ Message of raise of Exception """
+
     def area(self):
         raise Exception("area() is not implemented")
 
