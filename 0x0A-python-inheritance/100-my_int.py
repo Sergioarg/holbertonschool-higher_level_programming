@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """ Class MyInt return if is == or !=  """
 
     def __eq__(self, other):
         return False
