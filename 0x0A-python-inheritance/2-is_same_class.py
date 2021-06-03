@@ -6,6 +6,6 @@ def is_same_class(obj, a_class):
     """ Function that validate if the obj is the same type """
 
     if type(obj) == a_class:
-        True
+        return True
     else:
-        False
+        return False
