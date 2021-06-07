@@ -15,95 +15,100 @@ class Rectangle(Base):
             x (int): Value integer of x
             y (int): Value integer of y
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
-    """ Functions getter and setters """
 
-    """ Getter and setter of width """
+# -----------------------------------------------------------------------------
+    """ Getter and setters  """
     @property
     def width(self):
-        return (self.__width)
+        return self.__width
 
     @width.setter
     def width(self, value):
-        if (type(value) != int):
+        """ width setter """
+        if type(value) is not int:
             raise TypeError("width must be an integer")
-        if (value <= 0):
+        if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
+# -----------------------------------------------------------------------------
 
-    """ Getter and setter of height """
     @property
     def height(self):
-        return (self.__height)
+        return self.__height
 
     @height.setter
     def height(self, value):
-        if (type(value) != int):
+        if type(value) is not int:
             raise TypeError("height must be an integer")
-        if (value <= 0):
+        if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
-    """ Getter and setter of x """
+# -----------------------------------------------------------------------------
     @property
     def x(self):
-        return (self.__x)
+        """ x getter """
+        return self.__x
 
     @x.setter
     def x(self, value):
-        if (type(value) != int):
+        """ x setter """
+        if type(value) is not int:
             raise TypeError("x must be an integer")
-        if (value <= 0):
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
+# -----------------------------------------------------------------------------
 
-    """ Getter and setter of y """
     @property
     def y(self):
-        return (self.__y)
+        return self.__y
 
     @y.setter
     def y(self, value):
-        if (type(value) != int):
+        if type(value) is not int:
             raise TypeError("y must be an integer")
-        if (value <= 0):
+        if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
     """ Public Methods """
+    """ Public method that returns the area of the rectangle  """
 
     def area(self):
-        """ Return the area of the rectangle  """
-        width = self.__width
-        height = self.__height
-        if width == 0 or height == 0:
-            width = 0
-            height = 0
+        return (self.__height * self.__width)
 
-        return (width * height)
-
-    """ Function that dyplay the output  """
+    """ Public Method that dyplay the output  """
 
     def display(self):
 
         if self.__width == 0 or self.__height == 0:
-            print('')
-        else:
-            for h in range(self.__height):
-                for w in range(self.__width):
-                    print("#", end="")
-                print("")
+            return
+        for row in range(self.x):
+            print()
+        for cols in range(self.height):
+            print(' ' * self.x, end='')
+            print('#' * self.width)
 
-    """ Method return output file """
+    """ Public Method return output file """
 
     def __str__(self):
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
-                                                                 self.x,
-                                                                 self.y,
-                                                                 self.width,
-                                                                 self.height)
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.x, self.y, self.width, self.height)
+
+    """ Public Method that assigns an argument to each attribute """
+
+    def update(self, *args):
+        num_key = 0
+        key = ["id", "width", "height", "x", "y"]
+
+        for value in args:
+            if num_key < 5:
+                setattr(self, key[num_key], value)
+                num_key += 1
