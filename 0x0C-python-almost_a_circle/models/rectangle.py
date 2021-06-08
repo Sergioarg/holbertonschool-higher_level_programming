@@ -21,10 +21,6 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-    # ┌──────────────────────┐
-    # │  Getters and setters │
-    # └──────────────────────┘
-
     @property
     def width(self):
         """ Getter of width """
@@ -81,9 +77,6 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-    # ┌──────────────────────┐
-    # │  Public Methods      │
-    # └──────────────────────┘
 
     """ Public Method that returns the area of the rectangle  """
 
@@ -132,6 +125,7 @@ class Rectangle(Base):
     """ Public Method Returns the dictionary representation of a Rectangle """
 
     def to_dictionary(self):
+        """ Change to dictionary """
         dictionary = {
             "x": self.x,
             "y": self.y,
