@@ -104,9 +104,9 @@ class Rectangle(Base):
     """ Public Method that assigns an argument to each attribute """
 
     def update(self, *args, **kwargs):
-        """ Updates all a   ttributes of the Rectangle object. """
+        """ Updates all attributes of the Rectangle object. """
 
-        if bool(args) is True or args is not None:
+        if bool(args) is True and len(args) < 5 and args is not None:
             try:
                 self.id = args[0]
                 self.width = args[1]
