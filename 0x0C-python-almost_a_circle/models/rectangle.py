@@ -89,11 +89,11 @@ class Rectangle(Base):
         """ Display the rectangle """
         if self.__width == 0 or self.__height == 0:
             return
-        for row in range(self.x):
-            print()
-        for cols in range(self.height):
+        print("\n" * self.__y, end="")
+        for row in range(self.height):
             print(' ' * self.x, end='')
             print('#' * self.width)
+            # for cols in range(self.width):
 
     """ Public Method return output file """
 
