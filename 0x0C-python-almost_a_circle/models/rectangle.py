@@ -88,12 +88,13 @@ class Rectangle(Base):
     """ Public Method that returns the area of the rectangle  """
 
     def area(self):
+        """ Returns the area of the rectangle """
         return (self.__height * self.__width)
 
     """ Public Method that dyplay the output  """
 
     def display(self):
-
+        """ Display the rectangle """
         if self.__width == 0 or self.__height == 0:
             return
         for row in range(self.x):
@@ -105,15 +106,16 @@ class Rectangle(Base):
     """ Public Method return output file """
 
     def __str__(self):
+        """ Print the message of the rectangle values """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.x, self.y, self.width, self.height)
 
     """ Public Method that assigns an argument to each attribute """
 
     def update(self, *args, **kwargs):
-        """ Updates all attributes of the Rectangle object. """
+        """ Updates all a   ttributes of the Rectangle object. """
 
-        if len(args) < 5 or args is not None:
+        if bool(args) is True or args is not None:
             try:
                 self.id = args[0]
                 self.width = args[1]
@@ -131,10 +133,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         dictionary = {
-            "id": self.id,
-            "width": self.width,
-            "height": self.height,
             "x": self.x,
             "y": self.y,
+            "id": self.id,
+            "height": self.height,
+            "width": self.width
         }
         return dictionary
