@@ -16,9 +16,6 @@ class Square(Rectangle):
         return ("[Square] ({:d}) {:d}/{:d} - {:d}".format(
             self.id, self.x, self.y, self.width))
 
-    # ┌──────────────────────┐
-    # │  Getters and setters │
-    # └──────────────────────┘
 
     @property
     def size(self):
@@ -46,3 +43,13 @@ class Square(Rectangle):
             for value in kwargs.keys():
                 if value in dir(self):
                     setattr(self, value, kwargs[value])
+
+    def to_dictionary(self):
+        """ Assing values like dictionary """
+        dictionary = {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
+        return dictionary
