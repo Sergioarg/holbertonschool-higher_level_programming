@@ -93,7 +93,6 @@ class Rectangle(Base):
         for row in range(self.height):
             print(' ' * self.x, end='')
             print('#' * self.width)
-            # for cols in range(self.width):
 
     """ Public Method return output file """
 
