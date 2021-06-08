@@ -126,3 +126,15 @@ class Rectangle(Base):
             for value in kwargs.keys():
                 if value in dir(self):
                     setattr(self, value, kwargs[value])
+
+    """ Public Method Returns the dictionary representation of a Rectangle """
+
+    def to_dictionary(self):
+        dictionary = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y,
+        }
+        return dictionary

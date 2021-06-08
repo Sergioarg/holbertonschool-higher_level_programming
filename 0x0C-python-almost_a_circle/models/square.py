@@ -1,19 +1,48 @@
 #!/usr/bin/python3
+""" Module to class Square """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size, size, x, y)
+    """ Class Square """
 
-    # @property
-    # def size(self):
-    #     return self.__size
-    # @size.setter
-    # def size(self, value):
-    #     self.width = value
-    #     self.height = value
+    def __init__(self, size, x=0, y=0, id=None):
+        """ Public Method Constructor """
+        self.size = size
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """ Public Method that return messege """
         return ("[Square] ({:d}) {:d}/{:d} - {:d}".format(
-            self.__id, self.__x, self.__y, self.__size))
+            self.id, self.x, self.y, self.width))
+
+    # ┌──────────────────────┐
+    # │  Getters and setters │
+    # └──────────────────────┘
+
+    @property
+    def size(self):
+        """ Getter of size attribute """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """ Setter of size attribute """
+        self.width = value
+        self.height = value
+
+
+    def update(self, *args, **kwargs):
+        """ Public method to updates the attributes """
+        if bool(args) is True and  args is not None:
+            try:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except IndexError:
+                pass
+        else:
+            for value in kwargs.keys():
+                if value in dir(self):
+                    setattr(self, value, kwargs[value])
