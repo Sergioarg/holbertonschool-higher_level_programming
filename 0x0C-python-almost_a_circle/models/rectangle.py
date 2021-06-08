@@ -77,7 +77,6 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-
     """ Public Method that returns the area of the rectangle  """
 
     def area(self):
