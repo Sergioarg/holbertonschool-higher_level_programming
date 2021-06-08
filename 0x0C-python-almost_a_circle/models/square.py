@@ -16,7 +16,6 @@ class Square(Rectangle):
         return ("[Square] ({:d}) {:d}/{:d} - {:d}".format(
             self.id, self.x, self.y, self.width))
 
-
     @property
     def size(self):
         """ Getter of size attribute """
@@ -28,10 +27,9 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-
     def update(self, *args, **kwargs):
         """ Public method to updates the attributes """
-        if bool(args) is True and  args is not None:
+        if bool(args) is True and args is not None:
             try:
                 self.id = args[0]
                 self.size = args[1]
