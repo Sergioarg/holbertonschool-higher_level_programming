@@ -27,7 +27,7 @@ class Base:
         else:
             return json.dumps(list_dictionaries)
 
-    @classmethod    
+    @classmethod
     def save_to_file(cls, list_objs):
         """ Save information into a file """
         list = []
@@ -43,7 +43,12 @@ class Base:
         else:
             return json.load(json_string)
 
-
-
-    # @classmethod
-    # def create(cls, **dictionary):
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        if cls.__name__ == "Rectangle":
+            created_dicti = cls(1, 1)
+        if cls.__name__ == "Square":
+            created_dicti = cls(1)
+        created_dicti.update(**dictionary)
+        return created_dicti
