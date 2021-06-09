@@ -52,3 +52,17 @@ class Base:
             created_dicti = cls(1)
         created_dicti.update(**dictionary)
         return created_dicti
+
+    @classmethod
+    def load_from_file(cls):
+        """ load from file """
+
+        list_instances = []
+        try:
+            with open(cls.__name__ + '.json', 'r', encoding='utf-8') as file:
+                str_json_file = cls.from_json_string(file.read())
+                for item in str_json_file:
+                    list_instances.append(cls.create(**item))
+            return list_instances
+        except Exception as error:
+            return []
