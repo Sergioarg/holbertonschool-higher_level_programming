@@ -80,7 +80,8 @@ class Base:
                 else:
                     headers = ["id", "size", "x", "y"]
                 dict_list = csv.DictReader(file, fieldnames=headers)
-                dict_list = [dict([key, int(value)] for key, value in f.items())
+                dict_list = [dict([key, int(value)] for key,
+                                  value in f.items())
                              for f in dict_list]
                 return [cls.create(**argument) for argument in dict_list]
         except IOError:
