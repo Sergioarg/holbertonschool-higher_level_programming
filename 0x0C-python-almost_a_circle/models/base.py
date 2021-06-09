@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Module to class Base """
 import json
+import os.path
+import csv
 
 
 class Base:
@@ -65,4 +67,21 @@ class Base:
                     list_instances.append(cls.create(**item))
             return list_instances
         except Exception as error:
+            return []
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ from file csv data """
+        file_name = cls.__name__ + ".csv"
+        try:
+            with open(file_name, 'r', newline='') as file:
+                if cls.__name__ == "Rectangle":
+                    headers = ["id", "width", "height", "x", "y"]
+                else:
+                    headers = ["id", "size", "x", "y"]
+                dict_list = csv.DictReader(file, fieldnames=headers)
+                dict_list = [dict([key, int(value)] for key, value in f.items())
+                             for f in dict_list]
+                return [cls.create(**argument) for argument in dict_list]
+        except IOError:
             return []
