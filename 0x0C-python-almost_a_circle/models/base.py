@@ -36,7 +36,7 @@ class Base:
         with open("{}.json".format(cls.__name__), "w") as file:
             file.write(cls.to_json_string(list))
 
-    @classmethod
+    @staticmethod
     def from_json_string(json_string):
         if json_string is None or json_string == '':
             return []
