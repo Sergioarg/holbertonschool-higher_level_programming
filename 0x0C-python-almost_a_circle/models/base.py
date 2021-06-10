@@ -2,7 +2,6 @@
 """ Module to class Base """
 import json
 import csv
-from os import path
 
 
 class Base:
@@ -47,11 +46,12 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attributes already set"""
+        """ Returns an instance with all attributes already set """
         if cls.__name__ == "Rectangle":
             created_dicti = cls(1, 1)
         if cls.__name__ == "Square":
             created_dicti = cls(1)
+
         created_dicti.update(**dictionary)
         return created_dicti
 
@@ -71,15 +71,17 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Function that serializes in CSV, load from a CSV file"""
-        if not path.exists(cls.__name__ + '.csv'):
+        """ Serializes and deserializes in CSV """
+        filename = '{}.csv'.format(cls.__name__)
+        try:
+            with open(filename, mode='r', new_line='') as tmp_file_saves:
+                if cls.__name__ == 'Square':
+                    keys_square = ['id', 'size', 'x', 'y']
+                else:
+                    keys_rectangle = ['id', 'width', 'height', 'x', 'y']
+                to_csv = csv.DictReader(tmp_file_saves, field_names=tm)
+                tys = [{key: int(value) for key, value in dict.items()}
+                       for dict in to_csv]
+                return [cls.create(**dics) for dics in tys]
+        except IOError:
             return []
-        if cls.__name__ == 'Rectangle':
-            attrs = ('id', 'width', 'height', 'x', 'y')
-        elif cls.__name__ == 'Square':
-            attrs = ('id', 'size', 'x', 'y')
-        with open(cls.__name__ + '.csv', 'rt', newline='') as my_file:
-            reader = csv.reader(my_file)
-            my_objects = list(reader)
-        my_objects = ((int(i) for i in l) for l in my_objects)
-        return [cls.create(**dict(zip(attrs, l))) for l in my_objects]
