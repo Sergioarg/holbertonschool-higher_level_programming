@@ -2,6 +2,7 @@
 """ Module to class Base """
 import json
 import csv
+import os.path
 
 
 class Base:
@@ -70,18 +71,35 @@ class Base:
             return []
 
     @classmethod
-    def load_from_file_csv(cls):
-        """ Serializes and deserializes in CSV """
-        filename = '{}.csv'.format(cls.__name__)
-        try:
-            with open(filename, mode='r', new_line='') as tmp_file_saves:
-                if cls.__name__ == 'Square':
-                    keys_square = ['id', 'size', 'x', 'y']
+    def save_to_file_csv(cls, list_objs):
+        """ Save information into a csv file """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as file:
+            if list_objs is None or list_objs == []:
+                file.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    keys = ["id", "width", "height", "x", "y"]
                 else:
-                    keys_rectangle = ['id', 'width', 'height', 'x', 'y']
-                to_csv = csv.DictReader(tmp_file_saves, field_names=tm)
-                tys = [{key: int(value) for key, value in dict.items()}
-                       for dict in to_csv]
-                return [cls.create(**dics) for dics in tys]
+                    keys = ["id", "size", "x", "y"]
+                new_csv = csv.DictWriter(file, fieldnames=keys)
+                for object in list_objs:
+                    new_csv.writerow(object.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Load csv data """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, 'r', newline='') as file:
+                if cls.__name__ == "Rectangle":
+                    keys = ["id", "width", "height", "x", "y"]
+                else:
+                    keys = ["id", "size", "x", "y"]
+                dict_list = csv.DictReader(file, fieldnames=keys)
+                dict_list = [dict([key, int(value)] for key,
+                                  value in f.items())
+                             for f in dict_list]
+                return [cls.create(**argument) for argument in dict_list]
         except IOError:
             return []
