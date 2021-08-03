@@ -5,6 +5,7 @@ function factorial (number) {
   }
   return (number * factorial(number - 1));
 }
-const argv = parseInt(process.argv[2]);
+const num = parseInt(process.argv[2]);
+const result = factorial(num);
 
-console.log(factorial(argv[2]));
+console.log(result);
