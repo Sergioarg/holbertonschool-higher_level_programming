@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const value = process.argv.slice(2)
-  .sort(function (a, b) {return b - a; });
+  .sort(function (a, b) { return b - a; });
 
 if (value.length > 1) {
   console.log(value[1]);
