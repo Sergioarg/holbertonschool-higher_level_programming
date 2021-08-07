@@ -2,6 +2,10 @@
 import MySQLdb
 import sys
 
+""" Module to connect to the database and print the data from the
+    Table: States.
+
+"""
 if __name__ == "__main__":
 
     root = sys.argv[1]
@@ -9,9 +13,8 @@ if __name__ == "__main__":
     data_base = sys.argv[3]
 
     # Open database connection
-    # db = MySQLdb.connect(host="localhost", user=root,passwd=password,
-    # db=data_base, port=3306)
-    db = MySQLdb.connect(host="localhost", user=root, db=data_base, port=3306)
+    db = MySQLdb.connect(host="localhost", port=3306, user=root,
+                         passwd=password, db=data_base)
 
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
