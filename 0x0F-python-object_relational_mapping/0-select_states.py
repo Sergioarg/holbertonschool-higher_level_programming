@@ -25,8 +25,8 @@ if __name__ == "__main__":
     # Fetch a single row using fetchall() method.
     data = cursor.fetchall()
 
-    for element in data:
-        print(element)
+    for state in data:
+        print(state)
 
     # disconnect from server
     db.close()

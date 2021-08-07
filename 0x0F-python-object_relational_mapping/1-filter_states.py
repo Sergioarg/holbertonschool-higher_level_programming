@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Module to connect to the database and print the data from the
-    Table: States .
+    Table: States that inicialize with "N".
 """
 
 import MySQLdb
@@ -20,13 +20,14 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states  WHERE id > 3 ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
 
     # Fetch a single row using fetchall() method.
     data = cursor.fetchall()
 
-    for element in data:
-        print(element)
+    for state in data:
+        if (state[1][0] == 'N'):
+            print(state)
 
     # disconnect from server
     db.close()
