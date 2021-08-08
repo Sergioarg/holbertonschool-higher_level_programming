@@ -3,7 +3,7 @@
 """
 import sys
 from model_state import Base, State
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
@@ -16,9 +16,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_del = session.query(State).order_by(State.id)
+    all_states = session.query(State).order_by(State.id)
 
-    for state in state_del:
+    for state in all_states:
         if 'a' in state.name:
             session.delete(state)
             session.commit()
