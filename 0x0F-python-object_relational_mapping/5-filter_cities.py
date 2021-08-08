@@ -19,7 +19,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute("""SELECT cities.name FROM states
-                    INNER JOIN cities ON states.id = cities.state_id
+                    INNER JOIN cities
+                    ON states.id = cities.state_id
                     WHERE states.name = %s
                     ORDER BY cities.id ASC""", (state_name,))
 
@@ -28,7 +29,7 @@ if __name__ == "__main__":
     city = []
     for row in data:
         city.append(row[0])
-    print(*row, sep=", ")
+    print(*city, sep=", ")
 
     cursor.close()
     db.close()
