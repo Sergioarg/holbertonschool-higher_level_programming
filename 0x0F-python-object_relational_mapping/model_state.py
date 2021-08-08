@@ -7,9 +7,8 @@ Base = declarative_base()
 
 
 class State(Base):
-
+    """ Class States to create table in bd """
     __tablename__ = 'states'
 
-    id = Column(Integer, primary_key=True, autoincrement=True,
-                unique=False, nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
