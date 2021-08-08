@@ -30,5 +30,5 @@ if __name__ == "__main__":
             print(state)
 
     # disconnect from server
-    db.close()
     cursor.close()
+    db.close()

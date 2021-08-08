@@ -30,4 +30,5 @@ if __name__ == "__main__":
         city.append(row[0])
     print(*row, sep=", ")
 
+    cursor.close()
     db.close()
