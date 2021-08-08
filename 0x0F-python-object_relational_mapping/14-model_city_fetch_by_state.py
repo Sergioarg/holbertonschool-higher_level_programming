@@ -24,7 +24,7 @@ if __name__ == "__main__":
                           ).join(City, State.id == City.state_id)
 
     for state_city in query.order_by(City.id):
-        print("{:s}: {:d} {:s}".format(
+        print("{:s}: ({:d}) {:s}".format(
             state_city.state__name, state_city.city_id, state_city.city_name))
 
     session.close()
