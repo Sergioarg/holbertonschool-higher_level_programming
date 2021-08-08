@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Print a state with specicific name
+"""Start link class to table in database
 """
 import sys
 from model_state import Base, State
-from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
@@ -13,11 +12,4 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         user, passwd, db_name), pool_pre_ping=True)
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
-
-    change_state = session.query(State).filter_by(id=2).first()
-    change_state.name = "New Mexico"
-    session.commit()
-
-    session.close()
+    Base.metadata.create_all(engine)
