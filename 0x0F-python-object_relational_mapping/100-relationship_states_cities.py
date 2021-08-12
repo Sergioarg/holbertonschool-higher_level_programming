@@ -2,10 +2,11 @@
 """Start link class to table in database
 """
 import sys
-from relationship_city import City
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
-from sqlalchemy import (create_engine)
+from relationship_state import Base, State
+from relationship_city import City
+
 
 if __name__ == "__main__":
 

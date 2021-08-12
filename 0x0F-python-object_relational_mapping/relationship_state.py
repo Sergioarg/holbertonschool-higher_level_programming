@@ -8,7 +8,7 @@ Base = declarative_base()
 
 
 class State(Base):
-    """ Class States to create table in bd """
+    """ Empty class that inherits from Base  """
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, nullable=False)
