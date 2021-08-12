@@ -1,15 +1,12 @@
 #!/usr/bin/python3
-""" Mudole of class City from librarie of sqlalchemy """
+""" Module of class City from librarie of sqlalchemy """
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from relationship_state import Base, State
 
 
 class City(Base):
-    """ Create table cities from data base """
+    ''' Empty class that inherits from Base '''
     __tablename__ = 'cities'
-
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
