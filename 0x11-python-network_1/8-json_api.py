@@ -12,6 +12,9 @@ if __name__ == "__main__":
     # First get the page
     if len(argv) > 1:
         query = argv[1]
+    else:
+        query = ''
+
     data = {'q': query}
 
     req = requests.post(url=url, data=data)
