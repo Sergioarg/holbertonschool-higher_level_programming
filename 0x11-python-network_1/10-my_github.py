@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-import sys
+""" Module for use the GitHub API """
 import requests
 from sys import argv
 
-from requests.models import to_key_val_list
 
 if __name__ == "__main__":
-
+    """ Takes your GitHub credentials (username and password) and
+    uses the GitHub API to display your id """
     username = argv[1]
     password = argv[2]
     github = "https://api.github.com/user"
