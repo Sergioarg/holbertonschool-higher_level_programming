@@ -5,7 +5,7 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-
+    """ Print the last 10 commits of one repo """
     repo = argv[1]
     user = argv[2]
 
