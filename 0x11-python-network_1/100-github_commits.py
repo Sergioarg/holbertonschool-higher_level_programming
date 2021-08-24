@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Module for use the GitHub API """
+
 import requests
 from sys import argv
 
@@ -11,7 +12,7 @@ if __name__ == "__main__":
     github = "https://api.github.com/repos/{}/{}/commits?per_page=10".format(
         repo, user)
 
-    req = requests.get(github)
+    req = requests.get(url=github)
 
     for commit in req.json():
         sha = commit.get("sha")
