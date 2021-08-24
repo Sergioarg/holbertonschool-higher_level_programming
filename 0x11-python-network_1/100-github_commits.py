@@ -10,7 +10,7 @@ if __name__ == "__main__":
     user = argv[2]
 
     github = "https://api.github.com/repos/{}/{}/commits?per_page=10".format(
-        repo, user)
+        user, repo)
 
     req = requests.get(url=github)
 
