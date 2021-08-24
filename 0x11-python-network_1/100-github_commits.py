@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ Module for use the GitHub API """
-import json
 import requests
 from sys import argv
 
