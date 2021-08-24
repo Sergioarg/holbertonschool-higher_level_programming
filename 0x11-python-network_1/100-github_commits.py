@@ -16,5 +16,5 @@ if __name__ == "__main__":
 
     for commit in req.json():
         sha = commit.get("sha")
-        user = commit.get("commit").get("author").get("name")
-        print("{}: {}".format(sha, user))
+        usr = commit.get("commit").get("author").get("name")
+        print("{}: {}".format(sha, usr))
