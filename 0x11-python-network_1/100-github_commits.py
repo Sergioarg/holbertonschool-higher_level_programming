@@ -8,7 +8,8 @@ if __name__ == "__main__":
     repo = argv[1]
     user = argv[2]
 
-    github = "https://api.github.com/repos/{}/{}/commits".format(repo, user)
+    github = "https://api.github.com/repos/{}/{}/commits?per_page=10".format(
+        repo, user)
 
     req = requests.get(github)
 
