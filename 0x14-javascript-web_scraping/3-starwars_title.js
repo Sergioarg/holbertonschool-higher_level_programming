@@ -1,6 +1,4 @@
 #!/usr/bin/node
-/* Prints the title of a Star Wars movie by specific id */
-
 const request = require('request');
 const argv = process.argv;
 const id = argv[2];

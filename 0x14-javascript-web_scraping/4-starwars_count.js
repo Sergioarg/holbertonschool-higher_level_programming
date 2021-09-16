@@ -1,6 +1,4 @@
 #!/usr/bin/node
-/* Wedge Antilles is character ID 18 */
-
 const request = require('request');
 const argv = process.argv;
 const url = argv[2];

@@ -1,6 +1,4 @@
 #!/usr/bin/node
-/* Reads and prints the content of a file. */
-
 const argc = process.argv;
 const fs = require("fs");
 
